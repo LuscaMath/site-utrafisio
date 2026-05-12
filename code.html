@@ -1,0 +1,445 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UltraFisio - Fisioterapia e Bem-Estar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#ffffff",
+                    "inverse-primary": "#ffb2bd",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1a1c1f",
+                    "surface": "#faf9fe",
+                    "on-primary-container": "#ffd9de",
+                    "tertiary-fixed-dim": "#78dc77",
+                    "surface-container-low": "#f4f3f8",
+                    "secondary-fixed": "#ffdad9",
+                    "surface-dim": "#dad9de",
+                    "tertiary-fixed": "#94f990",
+                    "inverse-surface": "#2f3034",
+                    "surface-bright": "#faf9fe",
+                    "primary": "#4E1125",
+                    "primary-container": "#4E1125",
+                    "on-tertiary-fixed-variant": "#005313",
+                    "on-secondary-fixed": "#3b081b",
+                    "on-primary-fixed": "#3b081b",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#43474f",
+                    "surface-tint": "#904258",
+                    "on-tertiary-container": "#43a649",
+                    "on-secondary-fixed-variant": "#712a3d",
+                    "on-primary-fixed-variant": "#712a3d",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#904258",
+                    "surface-container-high": "#e8e7ec",
+                    "inverse-on-surface": "#f1f0f5",
+                    "on-tertiary-fixed": "#002204",
+                    "surface-container-highest": "#e3e2e7",
+                    "on-surface": "#1a1c1f",
+                    "error-container": "#ffdad6",
+                    "outline": "#747780",
+                    "surface-container": "#eeedf2",
+                    "surface-variant": "#e3e2e7",
+                    "primary-fixed-dim": "#ffb2bd",
+                    "tertiary": "#001d03",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#003408",
+                    "secondary-fixed-dim": "#ffb2bd",
+                    "background": "#faf9fe",
+                    "secondary": "#904258",
+                    "outline-variant": "#c4c6d0",
+                    "primary-fixed": "#ffd9de"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "section-padding": "80px",
+                    "stack-lg": "32px",
+                    "gutter-base": "24px",
+                    "stack-sm": "8px",
+                    "container-max": "1200px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .ambient-shadow {
+        box-shadow: 0 20px 30px rgba(78, 17, 37, 0.05);
+      }
+      .ambient-shadow-hover:hover {
+        box-shadow: 0 25px 40px rgba(78, 17, 37, 0.08);
+        transform: translateY(-4px);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="UltraFisio Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ui-M4nZalk9wsajcO-x8S7N0TP0TMeNy0wYJFDi6yzsYIte6wkKSw-oEHlQyAMARSk2TYAcdLezaHXRBYsdE6LilPEnfHNOTosjxpI0KVu1fc1RZCUplq-LbU8nw-eHKkTstUe32KcNbMWzienLJ-lelNWQQk7B3g70r-L4kNvELMyA_IyI3yY7KhN8dc_BVBEFRH4Tz2yZ9HE5m9t5HuJ-HcFqFxIGcomSToOqhXo7iaXyVsflvxAo3tk3x_9SqvPJhoTe6SiXAg"/>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">UltraFisio</span>
+</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-sm text-label-sm text-primary border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#servicos">Tratamentos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#clinica">Clínica</a>
+<a class="px-6 py-2 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity active:scale-95 duration-200" href="#contato">Agendar Consulta</a>
+</div>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="UltraFisio Clinical Space" class="w-full h-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida/ADBb0uiCH37fWZJ98sj5ZKapqo3iNYQ-4XYKydo9etsiGDTymHi84LGlQjbceI3BljVbTxgTiIdFuGZYBaLaAHVFfgvmoSMdFDCXDLxfE3HXKT2rGx9uZcQ96mFx2ds984VRUdU4fqTdMWLS_NvK1B1BfgT9ikvCREBp_ruZ6MTI3w0Lj2fhADI0uPNGc8WVtAlBUb-21hRzcAikBZLw4etRPv42g_U8xaubQ4wYgm2-No7NWc6mOqc1OoJF7uh8DYe7RNBamiwZF86w"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full py-section-padding">
+<div class="max-w-2xl text-on-primary">
+<h1 class="font-display-lg text-display-lg mb-stack-md leading-tight">Sua recuperação com tecnologia, cuidado e excelência.</h1>
+<p class="font-body-lg text-body-lg mb-stack-lg opacity-90">Fisioterapia especializada para uma vida com mais movimento e bem-estar. Atendimento personalizado focado nos seus objetivos.</p>
+<div class="flex flex-col sm:flex-row gap-stack-md">
+<a class="px-8 py-4 bg-secondary text-on-secondary rounded-lg font-label-sm text-headline-md text-center hover:opacity-90 transition-all ambient-shadow" href="#">Agendar avaliação</a>
+<a class="px-8 py-4 border border-on-primary/30 backdrop-blur-sm rounded-lg font-label-sm text-headline-md text-center hover:bg-white/10 transition-all" href="#servicos">Conhecer serviços</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-padding bg-surface">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid md:grid-cols-2 gap-section-padding items-center">
+<div class="relative">
+<img alt="Patient Treatment" class="rounded-xl ambient-shadow w-full aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujaAYjvm0gHkj9nFnWwdEtfu9sIziNlB9vZAUNC9V0_R1KAhoLnHUkJbFprBOIKUY73xW30RgsgVc0oNmFjfajKnjJYrGntmlKHrZfRpDFTeetAa3YH5OAU8QhtGqIqatPRR4DA6gYzvJ4RksuL_eiNVXjGS5hz7ZqXEtZqMGv4B8bfruAoIQ4Shllx88eMeoNeXjb7WjBVTJQoF6kzNVJrk76uZCGQqEK_WWggRX99KcZnfVruL4xbEjhOVb8oaP-GisCt28D-1g"/>
+<div class="absolute -bottom-6 -right-6 hidden lg:block w-32 h-32 bg-primary/10 rounded-full opacity-20"></div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-stack-sm">QUEM SOMOS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Cuidado humanizado aliado à alta performance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Na UltraFisio, acreditamos que cada paciente é único. Nossa abordagem combina as mais recentes tecnologias em reabilitação física com um toque humano essencial para a recuperação completa.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">Nossa equipe é formada por especialistas dedicados a devolver sua mobilidade e qualidade de vida, seja você um atleta profissional ou alguém em busca de alívio para dores cotidianas.</p>
+<div class="grid grid-cols-2 gap-stack-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+<span class="font-label-sm text-label-sm font-semibold">Profissionais Certificados</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="medical_services">medical_services</span>
+<span class="font-label-sm text-label-sm font-semibold">Equipamentos de Ponta</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section - Bento Grid Style -->
+<section class="py-section-padding bg-white" id="servicos">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-stack-sm">NOSSOS SERVIÇOS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Soluções Completas em Fisioterapia</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<!-- Service Card 1 -->
+<div class="bg-surface p-stack-lg rounded-xl border border-outline-variant/30 ambient-shadow ambient-shadow-hover transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-primary" data-icon="orthopedics">orthopedics</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Fisioterapia ortopédica</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Tratamento especializado para lesões em ossos, músculos e ligamentos com foco em alívio da dor.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface p-stack-lg rounded-xl border border-outline-variant/30 ambient-shadow ambient-shadow-hover transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-primary" data-icon="rehabilitation">charging_station</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Reabilitação pós-operatória</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Acompanhamento rigoroso para garantir uma recuperação segura e acelerada após procedimentos cirúrgicos.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface p-stack-lg rounded-xl border border-outline-variant/30 ambient-shadow ambient-shadow-hover transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-primary" data-icon="exercise">exercise</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Pilates clínico</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Exercícios de baixo impacto orientados por fisioterapeutas para fortalecimento e correção postural.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-surface p-stack-lg rounded-xl border border-outline-variant/30 ambient-shadow ambient-shadow-hover transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-primary" data-icon="sports_handball">sports_handball</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Fisioterapia esportiva</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Prevenção e tratamento de lesões em atletas, otimizando o retorno à prática esportiva.</p>
+</div>
+<!-- Service Card 5 -->
+<div class="bg-surface p-stack-lg rounded-xl border border-outline-variant/30 ambient-shadow ambient-shadow-hover transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-primary" data-icon="personal_injury">personal_injury</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Tratamento para dores crônicas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestão multidisciplinar para melhorar a qualidade de vida de quem convive com dores persistentes.</p>
+</div>
+<!-- Service Card 6 -->
+<div class="bg-surface p-stack-lg rounded-xl border border-outline-variant/30 ambient-shadow ambient-shadow-hover transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Atendimento personalizado</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Protocolos únicos desenhados especificamente para suas necessidades e ritmo de vida.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-section-padding bg-surface-container-low overflow-hidden" id="clinica">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-stack-sm">ESTRUTURA</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Conheça nossa Clínica</h2>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-stack-md">
+<img alt="Treatment Room" class="w-full aspect-square object-cover rounded-xl ambient-shadow" src="https://lh3.googleusercontent.com/aida/ADBb0ujaAYjvm0gHkj9nFnWwdEtfu9sIziNlB9vZAUNC9V0_R1KAhoLnHUkJbFprBOIKUY73xW30RgsgVc0oNmFjfajKnjJYrGntmlKHrZfRpDFTeetAa3YH5OAU8QhtGqIqatPRR4DA6gYzvJ4RksuL_eiNVXjGS5hz7ZqXEtZqMGv4B8bfruAoIQ4Shllx88eMeoNeXjb7WjBVTJQoF6kzNVJrk76uZCGQqEK_WWggRX99KcZnfVruL4xbEjhOVb8oaP-GisCt28D-1g"/>
+<img alt="Clinical Beds" class="w-full aspect-square object-cover rounded-xl ambient-shadow" src="https://lh3.googleusercontent.com/aida/ADBb0ujlrIhPkd6zkCgGkVj9aOcG9bvHgEdWsYY9jb6y7F_0AZM6BEMFH-Nijrp8tYwm5astkhCw9JJx8pS-OHGBc5MrZd25uW8AAWf5ZPiBEINWhiti0ouzswos8qRJAay0ZdPzYZcHIs47p57P4WQyMcKD69pNsoY_C6O3wMhDRdw-c6elsmgO-1oIe39L4_BvFv3uP55FcinasFYBHRXTqzgMagLR-k7OGEClG3zKM7wrOBtlxJ1-FUSWNs7nR5QcJS4qonmeuMKCDA"/>
+<img alt="Pilates Equipment" class="w-full aspect-square object-cover rounded-xl ambient-shadow" src="https://lh3.googleusercontent.com/aida/ADBb0uiCH37fWZJ98sj5ZKapqo3iNYQ-4XYKydo9etsiGDTymHi84LGlQjbceI3BljVbTxgTiIdFuGZYBaLaAHVFfgvmoSMdFDCXDLxfE3HXKT2rGx9uZcQ96mFx2ds984VRUdU4fqTdMWLS_NvK1B1BfgT9ikvCREBp_ruZ6MTI3w0Lj2fhADI0uPNGc8WVtAlBUb-21hRzcAikBZLw4etRPv42g_U8xaubQ4wYgm2-No7NWc6mOqc1OoJF7uh8DYe7RNBamiwZF86w"/>
+<img alt="Studio View" class="w-full aspect-square object-cover rounded-xl ambient-shadow" src="https://lh3.googleusercontent.com/aida/ADBb0uiTm432-j-qxqS0-DH0_o0Yxr1lqEqmYhuEEiyH2k9I4RmbVr-BqWy4OH3wqAF98L85vEdVids2aWFW9-Vlm6cXg9TBR72RqWVyIWQNBWBEPIUiSFFHz4ELPfgzpP8EOQUkD5mYZPWtt4FzG-vBdiWcRz1Nrn6hyNv64CCwoEYwza14mrvKCuFILhrUqN-ccThzKd7iBbRA5oqGDyK3a32jPgrkiAYXZqWlzcMkgwvE8Lia0JouaJRQdbrP3biPeSESsYg5pScQTg"/>
+</div>
+</div>
+</section>
+<!-- Differences Section -->
+<section class="py-section-padding">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="bg-primary rounded-3xl p-margin-desktop text-on-primary overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="relative z-10 grid md:grid-cols-2 gap-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-stack-lg">Por que escolher a UltraFisio?</h2>
+<div class="space-y-stack-lg">
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Atendimento humanizado</h4>
+<p class="font-body-md text-body-md opacity-80">Focamos em ouvir você para entender a raiz do seu problema.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Equipamentos modernos</h4>
+<p class="font-body-md text-body-md opacity-80">Acesso às melhores ferramentas para diagnóstico e tratamento.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Profissionais especializados</h4>
+<p class="font-body-md text-body-md opacity-80">Pós-graduados com experiência comprovada em diversas áreas.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-md content-center">
+<div class="bg-white/5 p-stack-md rounded-xl backdrop-blur-md">
+<span class="material-symbols-outlined text-white block mb-2" data-icon="bed">bed</span>
+<h5 class="font-label-sm text-label-sm">Ambiente confortável</h5>
+</div>
+<div class="bg-white/5 p-stack-md rounded-xl backdrop-blur-md">
+<span class="material-symbols-outlined text-white block mb-2" data-icon="pin_drop">pin_drop</span>
+<h5 class="font-label-sm text-label-sm">Localização acessível</h5>
+</div>
+<div class="bg-white/5 p-stack-md rounded-xl backdrop-blur-md">
+<span class="material-symbols-outlined text-white block mb-2" data-icon="schedule">schedule</span>
+<h5 class="font-label-sm text-label-sm">Horários flexíveis</h5>
+</div>
+<div class="bg-white/5 p-stack-md rounded-xl backdrop-blur-md">
+<span class="material-symbols-outlined text-white block mb-2" data-icon="groups_2">groups_2</span>
+<h5 class="font-label-sm text-label-sm">Atendimento 1 pra 1</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-padding bg-surface">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12">O que dizem nossos pacientes</h2>
+<div class="grid md:grid-cols-3 gap-stack-lg">
+<div class="bg-white p-stack-lg rounded-xl ambient-shadow text-left">
+<div class="flex text-yellow-500 mb-stack-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-stack-md">"O atendimento é impecável. Recuperei meu ombro em tempo recorde graças à dedicação dos profissionais da UltraFisio."</p>
+<h4 class="font-label-sm text-label-sm font-bold">Ricardo S.</h4>
+</div>
+<div class="bg-white p-stack-lg rounded-xl ambient-shadow text-left">
+<div class="flex text-yellow-500 mb-stack-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-stack-md">"A estrutura de Pilates é fantástica. Ambiente limpo, calmo e com ótimos equipamentos. Recomendo muito!"</p>
+<h4 class="font-label-sm text-label-sm font-bold">Mariana L.</h4>
+</div>
+<div class="bg-white p-stack-lg rounded-xl ambient-shadow text-left">
+<div class="flex text-yellow-500 mb-stack-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-stack-md">"Depois de meses com dor lombar, finalmente encontrei uma equipe que tratou a causa e não só o sintoma."</p>
+<h4 class="font-label-sm text-label-sm font-bold">André M.</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-padding bg-white relative">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-display-lg text-primary mb-stack-md">Pronto para transformar sua saúde?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-2xl mx-auto">Dê o primeiro passo para uma vida sem dor e com muito mais movimento hoje mesmo.</p>
+<a class="inline-flex items-center gap-2 px-10 py-5 bg-primary text-on-primary rounded-xl font-headline-md hover:scale-105 transition-transform ambient-shadow" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                Agendar minha avaliação agora
+            </a>
+</div>
+<!-- Decorative light patterns -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(144,66,88,0.1),transparent_50%)]"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary border-t border-outline/20" id="contato">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<img alt="UltraFisio Logo" class="h-10 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/ADBb0ui-M4nZalk9wsajcO-x8S7N0TP0TMeNy0wYJFDi6yzsYIte6wkKSw-oEHlQyAMARSk2TYAcdLezaHXRBYsdE6LilPEnfHNOTosjxpI0KVu1fc1RZCUplq-LbU8nw-eHKkTstUe32KcNbMWzienLJ-lelNWQQk7B3g70r-L4kNvELMyA_IyI3yY7KhN8dc_BVBEFRH4Tz2yZ9HE5m9t5HuJ-HcFqFxIGcomSToOqhXo7iaXyVsflvxAo3tk3x_9SqvPJhoTe6SiXAg"/>
+<span class="font-headline-md text-headline-md font-bold text-on-primary">UltraFisio</span>
+</div>
+<p class="font-body-md text-body-md text-on-primary/70 mb-6">Especialistas em Bem-Estar e Performance. Sua saúde em primeiro lugar.</p>
+<div class="flex gap-4">
+<a class="text-on-primary/70 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="text-on-primary/70 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md mb-6">Serviços</h5>
+<ul class="space-y-3 font-label-sm text-label-sm text-on-primary/70">
+<li><a class="hover:text-white" href="#">Fisioterapia</a></li>
+<li><a class="hover:text-white" href="#">Pilates Clínico</a></li>
+<li><a class="hover:text-white" href="#">Reabilitação</a></li>
+<li><a class="hover:text-white" href="#">Performance Esportiva</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md mb-6">Contato</h5>
+<ul class="space-y-4 font-label-sm text-label-sm text-on-primary/70">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="call">call</span>
+                        (11) 99999-9999
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="location_on">location_on</span>
+                        Av. Central, 1234 - Centro
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="mail">mail</span>
+                        contato@ultrafisio.com.br
+                    </li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md mb-6">Funcionamento</h5>
+<ul class="space-y-3 font-label-sm text-label-sm text-on-primary/70">
+<li>Segunda - Sexta: 07:00 - 20:00</li>
+<li>Sábado: 08:00 - 13:00</li>
+<li>Domingo: Fechado</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-on-primary/10 flex flex-col md:flex-row justify-between items-center gap-4 text-on-primary/50 font-label-sm text-label-sm">
+<p>© 2024 UltraFisio - Especialistas em Bem-Estar e Performance.</p>
+<div class="flex gap-6">
+<a class="hover:text-on-primary" href="#">Privacidade</a>
+<a class="hover:text-on-primary" href="#">Termos de Uso</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
+
