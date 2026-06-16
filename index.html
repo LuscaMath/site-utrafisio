@@ -133,8 +133,7 @@
     <nav
       class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
       <div class="flex items-center gap-2">
-        <img alt="UltraFisio Logo" class="h-10 w-auto object-contain"
-          src="./imagens/logo-icon-removebg.png" />
+        <img alt="UltraFisio Logo" class="h-10 w-auto object-contain" src="./imagens/logo-icon-removebg.png" />
         <span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">UltraFisio</span>
       </div>
       <div class="hidden md:flex items-center gap-stack-lg">
@@ -142,7 +141,7 @@
         <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
           href="#servicos">Tratamentos</a>
         <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-          href="#clinica">Clínica</a>
+          href="#sobre">Sobre a Clínica</a>
         <a class="px-6 py-2 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity active:scale-95 duration-200"
           href="#contato">Agendar Consulta</a>
       </div>
@@ -158,7 +157,7 @@
         <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg px-3 py-3 transition-colors"
           href="#servicos">Tratamentos</a>
         <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg px-3 py-3 transition-colors"
-          href="#clinica">Clínica</a>
+          href="#sobre">Sobre a Clínica</a>
         <a class="mt-2 px-6 py-3 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm text-center hover:opacity-90 transition-opacity active:scale-95 duration-200"
           href="#contato">Agendar Consulta</a>
       </div>
@@ -181,7 +180,8 @@
             movimento e bem-estar. Atendimento personalizado focado nos seus objetivos.</p>
           <div class="flex flex-col sm:flex-row gap-stack-md">
             <a class="px-8 py-4 bg-secondary text-on-secondary rounded-lg font-label-sm text-headline-md text-center hover:opacity-90 transition-all ambient-shadow"
-              href="#">Agendar avaliação</a>
+              href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
+              rel="noopener" target="_blank">Agendar avaliação</a>
             <a class="px-8 py-4 border border-on-primary/30 backdrop-blur-sm rounded-lg font-label-sm text-headline-md text-center hover:bg-white/10 transition-all"
               href="#servicos">Conhecer serviços</a>
           </div>
@@ -189,7 +189,7 @@
       </div>
     </section>
     <!-- About Section -->
-    <section class="py-section-padding bg-surface">
+    <section class="py-section-padding bg-surface" id="sobre">
       <div
         class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid md:grid-cols-2 gap-section-padding items-center">
         <div class="relative">
@@ -200,8 +200,9 @@
         </div>
         <div>
           <span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-stack-sm">QUEM SOMOS</span>
-          <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Cuidado humanizado aliado à alta
-            performance</h2>
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Sobre a Clínica</h2>
+          <h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Cuidado humanizado aliado à alta
+            performance</h3>
           <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Na UltraFisio, acreditamos que cada
             paciente é único. Nossa abordagem combina as mais recentes tecnologias em reabilitação física com um toque
             humano essencial para a recuperação completa.</p>
@@ -455,17 +456,107 @@
         <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-2xl mx-auto">Dê o primeiro passo
           para uma vida sem dor e com muito mais movimento hoje mesmo.</p>
         <a class="inline-flex items-center gap-2 px-10 py-5 bg-primary text-on-primary rounded-xl font-headline-md hover:scale-105 transition-transform ambient-shadow"
-          href="#">
+          href="#contato">
           <span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
           Agendar minha avaliação agora
         </a>
       </div>
-      <!-- Decorative light patterns -->
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(144,66,88,0.1),transparent_50%)]"></div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-section-padding bg-surface-container-low" id="contato">
+      <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-stretch">
+          <div class="bg-white rounded-xl p-stack-lg ambient-shadow">
+            <span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-stack-sm">CONTATO</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Agende sua avaliação</h2>
+            <form class="space-y-stack-md" action="#" method="post">
+              <div>
+                <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="nome">Nome</label>
+                <input
+                  class="w-full rounded-lg border-outline-variant bg-surface-container-low focus:border-primary focus:ring-primary"
+                  id="nome" name="nome" placeholder="Seu nome completo" type="text" required />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+                <div>
+                  <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2"
+                    for="telefone">Telefone</label>
+                  <input
+                    class="w-full rounded-lg border-outline-variant bg-surface-container-low focus:border-primary focus:ring-primary"
+                    id="telefone" name="telefone" placeholder="(11) 99999-9999" type="tel" required />
+                </div>
+                <div>
+                  <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2"
+                    for="email">E-mail</label>
+                  <input
+                    class="w-full rounded-lg border-outline-variant bg-surface-container-low focus:border-primary focus:ring-primary"
+                    id="email" name="email" placeholder="voce@email.com" type="email" />
+                </div>
+              </div>
+              <div>
+                <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="servico">Serviço de
+                  interesse</label>
+                <select
+                  class="w-full rounded-lg border-outline-variant bg-surface-container-low focus:border-primary focus:ring-primary"
+                  id="servico" name="servico">
+                  <option>Fisioterapia ortopédica</option>
+                  <option>Reabilitação pós-operatória</option>
+                  <option>Pilates clínico</option>
+                  <option>Fisioterapia esportiva</option>
+                  <option>Tratamento para dores crônicas</option>
+                </select>
+              </div>
+              <div>
+                <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2"
+                  for="mensagem">Mensagem</label>
+                <textarea
+                  class="w-full min-h-32 rounded-lg border-outline-variant bg-surface-container-low focus:border-primary focus:ring-primary"
+                  id="mensagem" name="mensagem" placeholder="Conte brevemente o que você precisa"></textarea>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-stack-md">
+                <button
+                  class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity active:scale-95"
+                  type="submit">
+                  <span class="material-symbols-outlined" data-icon="send">send</span>
+                  Enviar mensagem
+                </button>
+                <a class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-[#25D366] text-white rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity active:scale-95"
+                  href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
+                  rel="noopener" target="_blank">
+                  <span class="material-symbols-outlined" data-icon="chat">chat</span>
+                  WhatsApp
+                </a>
+              </div>
+            </form>
+          </div>
+          <div class="grid gap-stack-md">
+            <div class="bg-white rounded-xl p-stack-lg ambient-shadow">
+              <h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Onde estamos</h3>
+              <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+                  Setor Comercial Veredas Q. 2 Quadra 02 loja 2 lote 15 - Veredas, Brasília - DF, 72725-213
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-secondary" data-icon="call">call</span>
+                  (61) 99807-2373
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+                  Segunda a sexta, 08:00 - 18:00
+                </li>
+              </ul>
+            </div>
+            <iframe aria-label="Mapa com a localização da UltraFisio"
+              class="w-full min-h-[360px] lg:min-h-0 h-full rounded-xl ambient-shadow border-0" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15365.267210996066!2d-48.2004956!3d-15.6813282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bb7c198ff2a89%3A0x69e9e9f86c15aebb!2sUltraFisio%20Sa%C3%BAde%20e%20Bem%20Estar!5e0!3m2!1spt-BR!2sbr!4v1781641493522!5m2!1spt-BR!2sbr"></iframe>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <!-- Footer -->
-  <footer class="bg-primary text-on-primary border-t border-outline/20" id="contato">
+  <footer class="bg-primary text-on-primary border-t border-outline/20">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg mb-12">
         <div class="col-span-1 md:col-span-1">
@@ -488,10 +579,10 @@
         <div>
           <h5 class="font-headline-md text-headline-md mb-6">Serviços</h5>
           <ul class="space-y-3 font-label-sm text-label-sm text-on-primary/70">
-            <li><a class="hover:text-white" href="#">Fisioterapia</a></li>
-            <li><a class="hover:text-white" href="#">Pilates Clínico</a></li>
-            <li><a class="hover:text-white" href="#">Reabilitação</a></li>
-            <li><a class="hover:text-white" href="#">Performance Esportiva</a></li>
+            <li><a class="hover:text-white" href="#servicos">Fisioterapia</a></li>
+            <li><a class="hover:text-white" href="#servicos">Pilates Clínico</a></li>
+            <li><a class="hover:text-white" href="#servicos">Reabilitação</a></li>
+            <li><a class="hover:text-white" href="#servicos">Performance Esportiva</a></li>
           </ul>
         </div>
         <div>
@@ -499,11 +590,11 @@
           <ul class="space-y-4 font-label-sm text-label-sm text-on-primary/70">
             <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-secondary-fixed" data-icon="call">call</span>
-              (11) 99999-9999
+              (61) 99807-2373
             </li>
             <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-secondary-fixed" data-icon="location_on">location_on</span>
-              Av. Central, 1234 - Centro
+              Setor Comercial Veredas Q. 2 Quadra 02 loja 2 lote 15 - Veredas, Brasília - DF, 72725-213
             </li>
             <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-secondary-fixed" data-icon="mail">mail</span>
@@ -514,7 +605,7 @@
         <div>
           <h5 class="font-headline-md text-headline-md mb-6">Funcionamento</h5>
           <ul class="space-y-3 font-label-sm text-label-sm text-on-primary/70">
-            <li>Segunda - Sexta: 07:00 - 20:00</li>
+            <li>Segunda - Sexta: 08:00 - 18:00</li>
             <li>Sábado: 08:00 - 13:00</li>
             <li>Domingo: Fechado</li>
           </ul>
@@ -530,6 +621,12 @@
       </div>
     </div>
   </footer>
+  <a aria-label="Conversar pelo WhatsApp"
+    class="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white ambient-shadow hover:scale-105 transition-transform active:scale-95"
+    href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
+    rel="noopener" target="_blank">
+    <span class="material-symbols-outlined" data-icon="chat">chat</span>
+  </a>
   <script>
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
