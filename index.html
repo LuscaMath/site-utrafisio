@@ -124,6 +124,13 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
+
+    .whatsapp-icon {
+      display: inline-block;
+      width: 1.35em;
+      height: 1.35em;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 
@@ -179,9 +186,15 @@
           <p class="font-body-lg text-body-lg mb-stack-lg opacity-90">Fisioterapia especializada para uma vida com mais
             movimento e bem-estar. Atendimento personalizado focado nos seus objetivos.</p>
           <div class="flex flex-col sm:flex-row gap-stack-md">
-            <a class="px-8 py-4 bg-secondary text-on-secondary rounded-lg font-label-sm text-headline-md text-center hover:opacity-90 transition-all ambient-shadow"
-              href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
-              rel="noopener" target="_blank">Agendar avaliação</a>
+            <a class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-on-secondary rounded-lg font-label-sm text-headline-md text-center hover:opacity-90 transition-all ambient-shadow"
+              href="https://wa.me/5561998072373?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
+              rel="noopener" target="_blank">
+              <svg aria-hidden="true" class="whatsapp-icon" viewBox="0 0 32 32" fill="currentColor">
+                <path
+                  d="M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.3.61 4.55 1.77 6.53L3 29l6.63-1.74A12.93 12.93 0 0 0 16.04 29c7.18 0 13.02-5.83 13.02-13S23.22 3 16.04 3Zm0 23.8c-2.05 0-4.05-.58-5.78-1.68l-.41-.26-3.93 1.03 1.05-3.83-.27-.43A10.71 10.71 0 0 1 5.23 16c0-5.95 4.85-10.8 10.81-10.8 5.96 0 10.81 4.85 10.81 10.8 0 5.95-4.85 10.8-10.81 10.8Zm5.92-8.09c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.37-.5-2.61-1.61-.97-.86-1.62-1.92-1.81-2.24-.19-.32-.02-.5.14-.66.15-.15.32-.38.49-.57.16-.19.22-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.7 0 1.59 1.16 3.12 1.32 3.34.16.21 2.28 3.48 5.53 4.88.77.33 1.37.53 1.84.68.77.24 1.48.21 2.04.13.62-.09 1.91-.78 2.18-1.54.27-.75.27-1.4.19-1.54-.08-.13-.3-.21-.62-.38Z" />
+              </svg>
+              Agendar avaliação
+            </a>
             <a class="px-8 py-4 border border-on-primary/30 backdrop-blur-sm rounded-lg font-label-sm text-headline-md text-center hover:bg-white/10 transition-all"
               href="#servicos">Conhecer serviços</a>
           </div>
@@ -469,7 +482,11 @@
           <div class="bg-white rounded-xl p-stack-lg ambient-shadow">
             <span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-stack-sm">CONTATO</span>
             <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Agende sua avaliação</h2>
-            <form class="space-y-stack-md" action="#" method="post">
+            <form class="space-y-stack-md" action="/api/contact" method="post" id="contact-form">
+              <div class="hidden" aria-hidden="true">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" name="empresa" tabindex="-1" autocomplete="off" />
+              </div>
               <div>
                 <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2" for="nome">Nome</label>
                 <input
@@ -520,12 +537,17 @@
                   Enviar mensagem
                 </button>
                 <a class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-[#25D366] text-white rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity active:scale-95"
-                  href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
+                  href="https://wa.me/5561998072373?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
                   rel="noopener" target="_blank">
-                  <span class="material-symbols-outlined" data-icon="chat">chat</span>
+                  <svg aria-hidden="true" class="whatsapp-icon" viewBox="0 0 32 32" fill="currentColor">
+                    <path
+                      d="M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.3.61 4.55 1.77 6.53L3 29l6.63-1.74A12.93 12.93 0 0 0 16.04 29c7.18 0 13.02-5.83 13.02-13S23.22 3 16.04 3Zm0 23.8c-2.05 0-4.05-.58-5.78-1.68l-.41-.26-3.93 1.03 1.05-3.83-.27-.43A10.71 10.71 0 0 1 5.23 16c0-5.95 4.85-10.8 10.81-10.8 5.96 0 10.81 4.85 10.81 10.8 0 5.95-4.85 10.8-10.81 10.8Zm5.92-8.09c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.37-.5-2.61-1.61-.97-.86-1.62-1.92-1.81-2.24-.19-.32-.02-.5.14-.66.15-.15.32-.38.49-.57.16-.19.22-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.7 0 1.59 1.16 3.12 1.32 3.34.16.21 2.28 3.48 5.53 4.88.77.33 1.37.53 1.84.68.77.24 1.48.21 2.04.13.62-.09 1.91-.78 2.18-1.54.27-.75.27-1.4.19-1.54-.08-.13-.3-.21-.62-.38Z" />
+                  </svg>
                   WhatsApp
                 </a>
               </div>
+              <p class="hidden font-body-md text-body-md rounded-lg px-4 py-3" id="contact-status" role="status"
+                aria-live="polite"></p>
             </form>
           </div>
           <div class="grid gap-stack-md">
@@ -537,8 +559,14 @@
                   Setor Comercial Veredas Q. 2 Quadra 02 loja 2 lote 15 - Veredas, Brasília - DF, 72725-213
                 </li>
                 <li class="flex items-center gap-3">
-                  <span class="material-symbols-outlined text-secondary" data-icon="call">call</span>
-                  (61) 99807-2373
+                  <svg aria-hidden="true" class="whatsapp-icon text-secondary" viewBox="0 0 32 32"
+                    fill="currentColor">
+                    <path
+                      d="M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.3.61 4.55 1.77 6.53L3 29l6.63-1.74A12.93 12.93 0 0 0 16.04 29c7.18 0 13.02-5.83 13.02-13S23.22 3 16.04 3Zm0 23.8c-2.05 0-4.05-.58-5.78-1.68l-.41-.26-3.93 1.03 1.05-3.83-.27-.43A10.71 10.71 0 0 1 5.23 16c0-5.95 4.85-10.8 10.81-10.8 5.96 0 10.81 4.85 10.81 10.8 0 5.95-4.85 10.8-10.81 10.8Zm5.92-8.09c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.37-.5-2.61-1.61-.97-.86-1.62-1.92-1.81-2.24-.19-.32-.02-.5.14-.66.15-.15.32-.38.49-.57.16-.19.22-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.7 0 1.59 1.16 3.12 1.32 3.34.16.21 2.28 3.48 5.53 4.88.77.33 1.37.53 1.84.68.77.24 1.48.21 2.04.13.62-.09 1.91-.78 2.18-1.54.27-.75.27-1.4.19-1.54-.08-.13-.3-.21-.62-.38Z" />
+                  </svg>
+                  <a class="hover:text-primary transition-colors"
+                    href="https://wa.me/5561998072373?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
+                    rel="noopener" target="_blank">(61) 99807-2373</a>
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
@@ -589,8 +617,14 @@
           <h5 class="font-headline-md text-headline-md mb-6">Contato</h5>
           <ul class="space-y-4 font-label-sm text-label-sm text-on-primary/70">
             <li class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-secondary-fixed" data-icon="call">call</span>
-              (61) 99807-2373
+              <svg aria-hidden="true" class="whatsapp-icon text-secondary-fixed" viewBox="0 0 32 32"
+                fill="currentColor">
+                <path
+                  d="M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.3.61 4.55 1.77 6.53L3 29l6.63-1.74A12.93 12.93 0 0 0 16.04 29c7.18 0 13.02-5.83 13.02-13S23.22 3 16.04 3Zm0 23.8c-2.05 0-4.05-.58-5.78-1.68l-.41-.26-3.93 1.03 1.05-3.83-.27-.43A10.71 10.71 0 0 1 5.23 16c0-5.95 4.85-10.8 10.81-10.8 5.96 0 10.81 4.85 10.81 10.8 0 5.95-4.85 10.8-10.81 10.8Zm5.92-8.09c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.37-.5-2.61-1.61-.97-.86-1.62-1.92-1.81-2.24-.19-.32-.02-.5.14-.66.15-.15.32-.38.49-.57.16-.19.22-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.7 0 1.59 1.16 3.12 1.32 3.34.16.21 2.28 3.48 5.53 4.88.77.33 1.37.53 1.84.68.77.24 1.48.21 2.04.13.62-.09 1.91-.78 2.18-1.54.27-.75.27-1.4.19-1.54-.08-.13-.3-.21-.62-.38Z" />
+              </svg>
+              <a class="hover:text-white"
+                href="https://wa.me/5561998072373?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
+                rel="noopener" target="_blank">(61) 99807-2373</a>
             </li>
             <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-secondary-fixed" data-icon="location_on">location_on</span>
@@ -623,9 +657,12 @@
   </footer>
   <a aria-label="Conversar pelo WhatsApp"
     class="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white ambient-shadow hover:scale-105 transition-transform active:scale-95"
-    href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
+    href="https://wa.me/5561998072373?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20UltraFisio."
     rel="noopener" target="_blank">
-    <span class="material-symbols-outlined" data-icon="chat">chat</span>
+    <svg aria-hidden="true" class="whatsapp-icon text-3xl" viewBox="0 0 32 32" fill="currentColor">
+      <path
+        d="M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.3.61 4.55 1.77 6.53L3 29l6.63-1.74A12.93 12.93 0 0 0 16.04 29c7.18 0 13.02-5.83 13.02-13S23.22 3 16.04 3Zm0 23.8c-2.05 0-4.05-.58-5.78-1.68l-.41-.26-3.93 1.03 1.05-3.83-.27-.43A10.71 10.71 0 0 1 5.23 16c0-5.95 4.85-10.8 10.81-10.8 5.96 0 10.81 4.85 10.81 10.8 0 5.95-4.85 10.8-10.81 10.8Zm5.92-8.09c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.37-.5-2.61-1.61-.97-.86-1.62-1.92-1.81-2.24-.19-.32-.02-.5.14-.66.15-.15.32-.38.49-.57.16-.19.22-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.7 0 1.59 1.16 3.12 1.32 3.34.16.21 2.28 3.48 5.53 4.88.77.33 1.37.53 1.84.68.77.24 1.48.21 2.04.13.62-.09 1.91-.78 2.18-1.54.27-.75.27-1.4.19-1.54-.08-.13-.3-.21-.62-.38Z" />
+    </svg>
   </a>
   <script>
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -659,6 +696,60 @@
     window.addEventListener('resize', () => {
       if (window.matchMedia('(min-width: 768px)').matches) {
         setMobileMenuOpen(false);
+      }
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-status');
+
+    function setContactStatus(message, type) {
+      contactStatus.textContent = message;
+      contactStatus.classList.remove('hidden', 'bg-tertiary-fixed/20', 'text-on-tertiary-fixed-variant', 'bg-error-container', 'text-on-error-container');
+
+      if (type === 'success') {
+        contactStatus.classList.add('bg-tertiary-fixed/20', 'text-on-tertiary-fixed-variant');
+        return;
+      }
+
+      contactStatus.classList.add('bg-error-container', 'text-on-error-container');
+    }
+
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData.entries());
+
+      submitButton.disabled = true;
+      submitButton.classList.add('opacity-70', 'cursor-not-allowed');
+      setContactStatus('Enviando sua mensagem...', 'success');
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Não foi possível enviar a mensagem agora.');
+        }
+
+        contactForm.reset();
+        setContactStatus('Mensagem enviada com sucesso. Em breve entraremos em contato.', 'success');
+      } catch (error) {
+        setContactStatus(error.message || 'Não foi possível enviar a mensagem agora.', 'error');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
       }
     });
   </script>
